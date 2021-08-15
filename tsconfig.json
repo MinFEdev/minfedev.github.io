@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "allowJs": true,
+    "jsx": "preserve",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "baseUrl": "./src",
+    "paths": {
+      "components/*": ["./components/*"],
+      "utils/*": ["./utils/*"],
+      "hooks/*": ["./hooks/*"],
+      "styles/*": ["./styles/*"],
+      "assets/*": ["./assets/*"]
+    },
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true
+  },
+  "include": ["src/**/*.tsx", "src/components/index.ts"],
+  "exclude": ["node_modules"]
+}
