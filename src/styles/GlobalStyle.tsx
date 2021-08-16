@@ -81,10 +81,10 @@ const defualtStyle = css`
     line-height: 1.5;
     font-family: 'NotoSansKR', 'Apple SD Gothic Neo', '맑은 고딕',
       'Malgun Gothic', '돋움', dotum, sans-serif;
-    color: #c2cad4;
+    color: #fff;
   } /* color값은 디자인가이드에 맞게사용 */
   a {
-    color: #fff;
+    color: inherit;
     text-decoration: none;
   }
   a:active,

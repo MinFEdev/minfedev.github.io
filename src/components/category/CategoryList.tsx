@@ -12,7 +12,7 @@ type GatsbyLinkProps = {
   to: string;
 } & CategoryItemProps;
 
-interface CategoryListProps {
+export interface CategoryListProps {
   selectedCategory: string;
   categoryList: {
     [key: string]: number;

@@ -12,7 +12,6 @@ const ContentContainer: FunctionComponent<ContentContainerProps> = ({
 };
 
 const ContentContainerStyle = styled.div`
-  max-width: 768px;
   margin: 0 auto;
 `;
 
