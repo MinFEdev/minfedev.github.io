@@ -26,11 +26,10 @@ const CategoryList: FunctionComponent<CategoryListProps> = ({
   return (
     <CategoryListStyle>
       {Object.entries(categoryList).map(([name, count]) => (
-        <CategoryItem>
+        <CategoryItem key={name}>
           <CategoryLink
             to={`/?category=${name}`}
             active={name === selectedCategory}
-            key={name}
           >
             #{name}({count})
           </CategoryLink>

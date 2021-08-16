@@ -1,5 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { css, Global } from '@emotion/react';
+import NotoSansKrRegular from 'assets/fonts/NotoSansKR-Regular.woff2';
+import NotoSansKrBold from 'assets/fonts/NotoSansKR-Bold.woff2';
 
 const defualtStyle = css`
   /* reset */
@@ -129,17 +131,13 @@ const defualtStyle = css`
     font-family: 'NotoSansKR';
     font-style: normal;
     font-weight: 400;
-    src: local(※),
-      url(${require('./../assets/fonts/NotoSansKR-Regular.woff2')})
-        format('woff2');
+    src: local(※), url(${NotoSansKrRegular}) format('woff2');
   }
   @font-face {
     font-family: 'NotoSansKR';
     font-style: normal;
     font-weight: 600;
-    src: local(※),
-      url(${require('./../assets/fonts//NotoSansKR-Bold.woff2')})
-        format('woff2');
+    src: local(※), url(${NotoSansKrBold}) format('woff2');
   }
 `;
 

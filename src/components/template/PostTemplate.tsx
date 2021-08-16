@@ -28,7 +28,6 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = ({
   const {
     node: { html, frontmatter },
   } = edges[0];
-  console.log(edges);
   return (
     <React.Fragment>
       <Template>
