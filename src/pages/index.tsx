@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useMemo } from 'react';
 import { graphql } from 'gatsby';
 import queryString, { ParsedQuery } from 'query-string';
 
@@ -7,11 +7,12 @@ import CategoryList, {
 } from 'components/category/CategoryList';
 import PostList, { PostType } from 'components/post/PostList';
 import Template from 'components/template/Template';
-import { useMemo } from 'react';
+import Profile from 'components/profile/Profile';
 
 interface IndexPageProps {
   location: {
     search: string;
+    pathname: string;
   };
   data: {
     allMarkdownRemark: {
@@ -21,11 +22,12 @@ interface IndexPageProps {
 }
 
 const IndexPage: FunctionComponent<IndexPageProps> = ({
-  location: { search },
+  location: { search, pathname },
   data: {
     allMarkdownRemark: { edges },
   },
 }) => {
+  console.log(location);
   const parsed: ParsedQuery<string> = queryString.parse(search);
   const selectedCategory: string =
     typeof parsed.category !== 'string' || !parsed.category
@@ -58,7 +60,8 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({
   );
 
   return (
-    <Template>
+    <Template pathname={pathname}>
+      <Profile />
       <CategoryList
         selectedCategory={selectedCategory}
         categoryList={categoryList}

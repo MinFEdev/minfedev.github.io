@@ -52,10 +52,17 @@ const PostTitle = styled.h4`
 `;
 
 const PostSummary = styled.p`
+  overflow: hidden;
+  display: -webkit-box;
+  display: -moz-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   margin-top: 10px;
   line-height: 1.45;
+  max-height: 2.9em;
   font-size: 1rem;
   color: #fff;
+  text-overflow: ellipsis;
 `;
 
 const MetaInfoWrapper = styled.div`

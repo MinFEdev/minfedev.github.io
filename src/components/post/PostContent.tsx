@@ -41,6 +41,10 @@ const MarkdownRenderer = styled.div`
     margin-top: 80px;
   }
 
+  * + h4 {
+    margin-top: 40px;
+  }
+
   hr + h1,
   hr + h2,
   hr + h3 {
@@ -58,7 +62,9 @@ const MarkdownRenderer = styled.div`
   h3 {
     font-size: 20px;
   }
-
+  h4 {
+    font-size: 18px;
+  }
   // Adjust Quotation Element Style
   blockquote {
     margin: 30px 0;

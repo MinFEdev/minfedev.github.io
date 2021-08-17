@@ -7,15 +7,17 @@ import ContentContainer from 'components/container/ContentContainer';
 import Main from 'components/main/Main';
 
 interface TemplateProps {
+  pathname?: string;
   children: ReactNode;
 }
 
-const Template: FunctionComponent<TemplateProps> = ({ children }) => {
+const Template: FunctionComponent<TemplateProps> = ({ pathname, children }) => {
+  const isMain = pathname === '/';
   return (
     <Container>
       <GlobalStyle />
       <Header />
-      <Main>
+      <Main isMain={isMain}>
         <ContentContainer>{children}</ContentContainer>
       </Main>
     </Container>

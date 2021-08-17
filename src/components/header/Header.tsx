@@ -22,6 +22,12 @@ const Header: FunctionComponent = () => {
           </Link>
         </HomeNavItem>
         <HomeNavItem>
+          <Link to="/about">
+            <FontAwesomeIcon icon={faHome} />
+            <ScreenOut label="About" />
+          </Link>
+        </HomeNavItem>
+        <HomeNavItem>
           <Link to="/">
             <FontAwesomeIcon icon={faStickyNote} />
             <ScreenOut label="POST" />
