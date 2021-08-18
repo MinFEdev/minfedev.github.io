@@ -2,11 +2,7 @@ import React, { FunctionComponent } from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faHome,
-  faStickyNote,
-  faAddressCard,
-} from '@fortawesome/free-solid-svg-icons';
+import { faHome, faAddressCard } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import ScreenOut from 'components/screenOut/ScreenOut';
@@ -31,12 +27,6 @@ const Header: FunctionComponent = () => {
             <ScreenOut label="About" />
           </Link>
         </HomeNavItem>
-        <HomeNavItem>
-          <Link to="/">
-            <FontAwesomeIcon icon={faStickyNote} />
-            <ScreenOut label="POST" />
-          </Link>
-        </HomeNavItem>
       </HomeNavList>
       <AboutLinkList>
         <AboutLinkItem>
@@ -54,6 +44,7 @@ const HeaderStyle = styled.header`
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 50;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -62,6 +53,14 @@ const HeaderStyle = styled.header`
   padding: 1em;
   background-color: rgb(24, 24, 24);
   box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+  }
 `;
 
 const HomeLink = styled.h1`
@@ -75,19 +74,27 @@ const HomeLink = styled.h1`
   }
 `;
 
-const HomeNavList = styled.nav``;
+const HomeNavList = styled.nav`
+  @media (max-width: 768px) {
+    display: flex;
+  }
+`;
 const HomeNavItem = styled.li`
   font-size: 16px;
   text-align: center;
 
   & + & {
     margin-top: 40px;
+
+    @media (max-width: 768px) {
+      margin-top: 0;
+      margin-left: 20px;
+    }
   }
 `;
 
 const AboutLinkList = styled.ul`
   position: relative;
-  width: 100%;
 `;
 const AboutLinkItem = styled.li`
   font-size: 16px;

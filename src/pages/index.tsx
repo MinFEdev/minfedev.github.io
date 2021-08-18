@@ -27,7 +27,6 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({
     allMarkdownRemark: { edges },
   },
 }) => {
-  console.log(location);
   const parsed: ParsedQuery<string> = queryString.parse(search);
   const selectedCategory: string =
     typeof parsed.category !== 'string' || !parsed.category

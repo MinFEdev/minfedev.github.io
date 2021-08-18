@@ -17,6 +17,7 @@ const Profile: FunctionComponent = () => {
 
 const ProfileStyle = styled.div`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   max-width: 768px;
@@ -26,6 +27,10 @@ const ProfileStyle = styled.div`
 const ProfileText = styled.p`
   font-size: 2rem;
   line-height: 1.25;
+
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+  }
 `;
 
 const ProfileThumb = styled.div`
@@ -47,6 +52,15 @@ const ProfileThumb = styled.div`
     line-height: 1;
     font-weight: bold;
     color: #000;
+  }
+
+  @media (max-width: 768px) {
+    width: 70px;
+    height: 70px;
+
+    > span {
+      font-size: 1rem;
+    }
   }
 `;
 

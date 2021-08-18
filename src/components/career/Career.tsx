@@ -126,15 +126,28 @@ const CareerList = styled.ol`
     padding: 30px;
     box-sizing: border-box;
     font-size: 20px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 `;
 
 const CareerPeriod = styled.span`
-  width: 200px;
   flex: 1;
+  width: 200px;
+  opacity: 0.7;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 const CareerContentBox = styled.div`
   width: calc(100% - 200px);
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 const CompanyName = styled.strong`
   display: block;
@@ -162,9 +175,14 @@ const ProjectTitle = styled.em`
 
 const ProjectSkill = styled.ul`
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   font-size: 0.85rem;
 
   > li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5em;
     padding: 0.1em 0.5em;
     border-radius: 10px;
     background-color: #2e2a2a;
@@ -172,6 +190,14 @@ const ProjectSkill = styled.ul`
   }
   > li + li {
     margin-left: 10px;
+  }
+
+  @media (max-width: 768px) {
+    justify-content: space-between;
+
+    > li + li {
+      margin-left: 0;
+    }
   }
 `;
 
