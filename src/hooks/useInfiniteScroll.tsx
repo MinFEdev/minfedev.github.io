@@ -1,22 +1,19 @@
-import { useMemo, useRef } from 'react';
 import { PostType } from 'components/post/PostList';
-import { MutableRefObject } from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { MutableRefObject, useState, useEffect, useRef, useMemo } from 'react';
 
 export type useInfiniteScrollType = {
-  containerRef: MutableRefObject<HTMLUListElement | null>;
+  containerRef: MutableRefObject<HTMLDivElement | null>;
   postList: PostType[];
 };
 
 const NUMBER_OF_ITEMS_PER_PAGE = 10;
 
-const useInfiniteScroll = (
+const useInfiniteScroll = function (
   selectedCategory: string,
   posts: PostType[],
-): useInfiniteScrollType => {
-  const containerRef: MutableRefObject<HTMLUListElement | null> =
-    useRef<HTMLUListElement>(null);
+): useInfiniteScrollType {
+  const containerRef: MutableRefObject<HTMLDivElement | null> =
+    useRef<HTMLDivElement>(null);
   const [count, setCount] = useState<number>(1);
 
   const postListByCategory = useMemo<PostType[]>(
