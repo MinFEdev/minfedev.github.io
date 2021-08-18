@@ -49,8 +49,10 @@ const CategoryListStyle = styled.ul`
 
 const CategoryItem = styled.li`
   position: relative;
+  min-width: 100px;
+  text-align: center;
   & + & {
-    margin-left: 10px;
+    margin-left: 20px;
   }
 `;
 

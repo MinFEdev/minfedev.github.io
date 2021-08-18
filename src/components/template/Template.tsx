@@ -12,13 +12,14 @@ interface TemplateProps {
 }
 
 const Template: FunctionComponent<TemplateProps> = ({ pathname, children }) => {
-  const isMain = pathname === '/';
+  console.log(pathname);
+  const isMain = pathname === '/' || pathname === '/about';
   return (
     <Container>
       <GlobalStyle />
       <Header />
       <Main isMain={isMain}>
-        <ContentContainer>{children}</ContentContainer>
+        <ContentContainer isMain={isMain}>{children}</ContentContainer>
       </Main>
     </Container>
   );

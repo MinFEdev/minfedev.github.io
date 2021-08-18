@@ -2,7 +2,11 @@ import React, { FunctionComponent } from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faStickyNote } from '@fortawesome/free-solid-svg-icons';
+import {
+  faHome,
+  faStickyNote,
+  faAddressCard,
+} from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import ScreenOut from 'components/screenOut/ScreenOut';
@@ -23,7 +27,7 @@ const Header: FunctionComponent = () => {
         </HomeNavItem>
         <HomeNavItem>
           <Link to="/about">
-            <FontAwesomeIcon icon={faHome} />
+            <FontAwesomeIcon icon={faAddressCard} />
             <ScreenOut label="About" />
           </Link>
         </HomeNavItem>
@@ -77,7 +81,7 @@ const HomeNavItem = styled.li`
   text-align: center;
 
   & + & {
-    margin-top: 20px;
+    margin-top: 40px;
   }
 `;
 
